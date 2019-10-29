@@ -21,7 +21,7 @@ class RecursiveMerger implements MergerInterface
     public function merge(array $left, array $right): array
     {
         foreach ($right as $key => $value) {
-            if (is_array($value) === true && isset($left[$key]) === true && is_array($left[$key]) === true) {
+            if (is_array($value) && isset($left[$key]) && is_array($left[$key])) {
                 if ($this->isAssoc($value)) {
                     $left[$key] = $this->merge($left[$key], $value);
                 } else {
