@@ -30,8 +30,8 @@ class RecursiveMergerTest extends TestCase
             ],
             'e' => null,
             'f',
-            function () {
-                echo 'test';
+            static function () {
+                echo 'foo';
             },
             'x' => [
                 'y' => 'z',
@@ -56,8 +56,8 @@ class RecursiveMergerTest extends TestCase
                 'a',
                 'b',
             ],
-            function () {
-                echo 'test';
+            static function () {
+                echo 'bar';
             },
             'x' => [
                 'z' => 'y',
@@ -84,8 +84,8 @@ class RecursiveMergerTest extends TestCase
                 0 => 'a',
                 1 => 'b',
             ],
-            2 => function () {
-                echo 'test';
+            2 => static function () {
+                echo 'bar';
             },
             'x' => [
                 'y' => 'z',
