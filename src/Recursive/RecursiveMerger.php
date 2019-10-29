@@ -42,7 +42,7 @@ class RecursiveMerger implements MergerInterface
      * @param array $array
      * @return bool True when $value is an associative array, false otherwise.
      */
-    protected function isAssoc(array $array): bool
+    private function isAssoc(array $array): bool
     {
         return array_values($array) !== $array;
     }
