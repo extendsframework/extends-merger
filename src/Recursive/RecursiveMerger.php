@@ -22,7 +22,7 @@ class RecursiveMerger implements MergerInterface
     {
         foreach ($right as $key => $value) {
             if (is_array($value) && isset($left[$key]) && is_array($left[$key])) {
-                if ($this->isAssoc($value)) {
+                if (array_values($value) !== $value) {
                     $left[$key] = $this->merge($left[$key], $value);
                 } else {
                     $left[$key] = array_merge($left[$key], $value);
@@ -34,16 +34,5 @@ class RecursiveMerger implements MergerInterface
         }
 
         return $left;
-    }
-
-    /**
-     * Check if $array is an associative array.
-     *
-     * @param array $array
-     * @return bool True when $value is an associative array, false otherwise.
-     */
-    private function isAssoc(array $array): bool
-    {
-        return array_values($array) !== $array;
     }
 }

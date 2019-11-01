@@ -14,7 +14,6 @@ class RecursiveMergerTest extends TestCase
      * Test that two configs ($left and $right) can be merged and merged config ($merged) will be returned.
      *
      * @covers \ExtendsFramework\Merger\Recursive\RecursiveMerger::merge()
-     * @covers \ExtendsFramework\Merger\Recursive\RecursiveMerger::isAssoc()
      */
     public function testMerge(): void
     {
